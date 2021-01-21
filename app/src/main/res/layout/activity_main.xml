@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/et_key_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入秘钥类型"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btn_get_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击获取秘钥" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="秘钥结果为：" />
+
+    <TextView
+        android:id="@+id/tv_key_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tv_sha1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当前应用签名的sha1值" />
+
+</LinearLayout>
