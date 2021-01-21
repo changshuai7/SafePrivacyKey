@@ -6,7 +6,7 @@
 
 框架的主要优势如下：
 
-1. 基于JNI和Cmaker,实现了将敏感秘钥存入so中。数据更安全.
+1. 基于JNI和CMaker,实现了将敏感秘钥存入so中。数据更安全.
 2. 第一层安全校验：只有在允许范围内的应用（校验包名）才可通过包名校验。
 3. 第二层安全校验：只有在允许范围的应用签名（校验签名sha1）才可通过签名校验。
 
@@ -81,10 +81,13 @@ char *array_key[][2] =
         };
 ```
 **array_signature**：该数组中存储着允许访问的应用的签名sha1值。
+
 **array_package**：该数组中存储着允许访问的应用包名。
+
 只有同时满足上述两个限制的应用，才是被允许访问的应用。
 
 **array_type**：定义秘钥类型
+
 **array_key**：定义秘钥值（[0]=debug秘钥，[1]=release秘钥）
 
 获取应用签名sha1的三种方法：
@@ -130,8 +133,8 @@ build即可。打包完成后，在/build/intermediates/cmake/release/obj/下，
 
 #### 3、发布Library
 
-1、注释掉externalNativeBuild，且删除掉临时定义的jniLibs目录。
-2、发布Library到jcenter或者公司自有仓库
+1. 注释掉externalNativeBuild，且删除掉临时定义的jniLibs目录。
+2. 发布Library到jcenter或者公司自有仓库
 
 ### 三、使用Library
 
@@ -142,14 +145,12 @@ build即可。打包完成后，在/build/intermediates/cmake/release/obj/下，
 dependencies {
      implementation 'com.shuai:safe-privacy-key:0.0.1'
 }
-
 ```
 #### 2、使用
 
 ```
 //获取类型为”type1“的秘钥
 PrivacyKeyGenerator.getPrivacyKey(MainActivity.this, ”type1“, BuildConfig.DEBUG);
-
 ```
 
 由此即可使用。
